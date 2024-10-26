@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pants</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="icon" href="img/logo.png">
+
+  <style>
+ 
+    @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto&family=Sedgwick+Ave+Display&family=Ubuntu&display=swap');
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fdfdfd;
+
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+
+    .box {
+      color: white;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      background-color: red;
+      color: white;
+      top: -8px;
+      right: 0;
+      padding: 3px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      z-index: 99;
+      font-size: 16px;
+    }
+
+    #cart-icon {
+      font-size: 1.7rem;
+      cursor: pointer;
+      padding-top: 10px;
+      color: black;
+      margin-top: -8px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      padding: 4rem;
+      margin: auto;
+      width: 100%;
+    }
+
+    h2.title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .shop-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+      gap: 1.5rem;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .food-box {
+      position: relative;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      border-radius: 3px;
+    }
+
+    .pic {
+      overflow: hidden;
+    }
+
+    .pic:hover img {
+      transform: scale(1.1);
+    }
+
+    .food-img {
+      transition: 0.4s;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    .food-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #434343;
+    }
+
+    .food-price {
+      font-weight: 500;
+    }
+
+    .add-cart {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #434343;
+      color: white;
+      padding: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .add-cart:hover {
+      background-color: red;
+    }
+
+
+    .cart {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+    .cart-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-box {
+      display: grid;
+      grid-template-columns: 32% 50% 18%;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 10px;
+    }
+
+    .cart-img {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      padding: 5px;
+    }
+
+    .detail-box {
+      display: grid;
+      row-gap: 0.5rem;
+    }
+
+    .price-box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cart-food-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #434343;
+      font-weight: 500;
+    }
+
+    .cart-price {
+      font-weight: 500;
+    }
+
+    .cart-quantity {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      outline: none;
+      width: 2.4rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .cart-remove {
+      font-size: 24px;
+      color: red;
+      cursor: pointer;
+    }
+
+    .total {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .total-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .total-price {
+      margin-left: 0.5rem;
+    }
+
+    .btn-buy {
+      padding: 12px 20px;
+      background-color: red;
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .btn-buy:hover {
+      background-color: #434343;
+      transition: 1s;
+
+    }
+
+    #cart-close {
+      position: absolute;
+      top: 1rem;
+      right: 0.8rem;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+ 
+.navbar{
+  padding: 5px 2% 5px 2%;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 10%);
+ 
+}
+#home-active{
+  color: red;
+}
+#active{
+  color: red!important;
+}
+.navbar-nav{
+  padding-right: 20%;
+}
+.nav-item{
+  padding: 5px;
+}
+.nav-item a{
+  color: #010101;
+  margin-right: 20px;
+  font-weight: 600;
+}
+.nav-item a:hover{
+  color: red!important;
+  margin-right: 20px;
+  font-weight: 600;
+  transition: .6s ease;  
+}
+.form-inline i:hover{
+  color: red!important;
+
+  transition: .6s ease;  
+
+}
+.dropdown-menu a:hover{
+  color: white!important;
+  background:  red!important;
+
+}
+/* navbar end   */
+
+    .whatsapp_float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      /* box-shadow: 2px 2px 3px #999; */
+      z-index: 100;
+    }
+
+    .whatsapp_float:hover {
+      color: white;
+
+    }
+
+    .whatsapp-icon {
+      margin-top: 16px;
+    }
+
+    /* for mobile */
+    @media screen and (max-width: 767px) {
+      .whatsapp-icon {
+        margin-top: 10px;
+      }
+
+      .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+      }
+    }
+
+    /* footer css  */
+.footers a {
+  text-decoration: none;
+  color:#696969;
+}
+.footers a:hover{
+  color: red;
+}
+.footers p {
+color:#696969;
+}
+.footers ul {
+line-height:30px;
+}
+#social-fb:hover {
+color: #3B5998;
+transition:all .001s;
+}
+#social-tw:hover {
+color: #4099FF;
+transition:all .001s;
+}
+#social-gp:hover {
+color: #d34836;
+transition:all .001s;
+}
+#social-em:hover {
+color: #f39c12;
+transition:all .001s;
+}
+/* end  */
+  </style>
+</head>
+
+<body>
+  <!-- whattsapp icon  -->
+  <a href="https://web.whatsapp.com/" target="_blank" class="whatsapp_float"><i
+      class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+  <!-- whattsapp icon  -->
+
+  <!-- navber start -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="" height="100px" width="100%"></a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item " >
+                <a  class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                  <a class="dropdown-item" href="tie.html">Tie</a>
+                  <a class="dropdown-item" href="Socks.html">Socks</a>
+                  <a class="dropdown-item" href="skirt.html">Skirts</a>
+                  <a class="dropdown-item" href="short.html">Shorts</a>
+                  <a class="dropdown-item" href="Pants.html">Pants</a>
+                  <a class="dropdown-item" href="hoodies.html">Hoodies</a>
+                  <a class="dropdown-item" href="T-shirts.html">T-shirts</a>
+                  <a class="dropdown-item" href="Frocks.html">Frocks</a>
+              </div>
+          </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="about.html">About </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="gallery.html">Gallery </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="contact.html">Contact </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" style="font-size: 22px;">
+            <i class="fa fa-heart-o" aria-hidden="true"></i> &nbsp;&nbsp;
+            <div class="box">
+              <div class="cart-count">0</div>
+              <ion-icon name="cart" id="cart-icon"></ion-icon>
+            </div>&nbsp;&nbsp;
+            <a href="" style="color: black;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-user"
+                aria-hidden="true"></i></a> &nbsp;&nbsp;
+          </form>
+    </div>
+  </nav>
+  <!-- navber end  -->
+
+  <!-- navber  -->
+  <header>
+    <div class="nav">
+      <!-- <a href="#" class="logo">
+        <ion-icon name="fast-food"></ion-icon>
+        Food Delight
+      </a> -->
+      <div class="cart">
+        <div class="cart-title"
+          style="text-align: center;  font-size: 40px; font-family: 'Leckerli One', cursive; color: red;"><span
+            style="font-size: 40px; font-family: 'Leckerli One', cursive; color: #434343;">Cart </span>Items</div>
+        <div class="cart-content">
+
+        </div>
+
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">Rs.0</div>
+        </div>
+
+        <a href="form.html"> <button class="btn-buy">Place Order</button></a>
+
+        <ion-icon name="close" id="cart-close"></ion-icon>
+
+      </div>
+    </div>
+  </header>
+  <!-- navber  -->
+        <!-- Modal card  1 -->
+        <div class="modal fade" id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row gy-3">
+                                <div class="col-lg-6">
+                                    <div class="samll-container single-product">
+                                        <div class="row">
+                                            <div class="col-lg-11">
+                                                <img src="img/pant.png"
+                                                    alt="" width="100%" id="ProductImg1">
+                                             
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="modal-text">
+                                        <P><b> Name </b> : Alpha College Pant Boys (Fix Belt)<br>
+                                            <b> Price </b>: ₨ 1881 – ₨ 2198<br>
+    
+                                            <b>Availability</b>: *In stock
+    
+                                        <div class="form-group">
+                                            <label for="">Quantity:</label>
+                                            <input type="number" class="form-control" name="" id=""
+                                                aria-describedby="helpId" placeholder="">
+                                        </div>
+    
+                                        <b>Description</b>
+                                        <P>Bay View Academy Boys’ Elastic Pants in premium Navy Blue exclusively feature a button closure and two pockets. The fabric is machine-washable, ensuring a soft and comfortable feel for everyday use. They are designed to stay stylish, elegant, and cool, making them ideal for school wear or outings with friends in school.</P>
+    
+                                        <div class="review">
+                                            <h5>Client Review</h5>
+                                            <div class="star">
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star "></i>
+                                            </div>
+                                        </div> <br>
+      
+                                        <div class="d-grid gap-2">
+                                            <a href="form.html" class="btn " type="submit" style="background-color: red;
+                                        color: white;
+                                        border-radius: 15px; "><i class="fa fa-shopping-cart" aria-hidden="true"
+                                                    style="font-size: 22px;"></i>&nbsp;&nbsp;&nbsp;Buy Now</a>
+                                        </div>
+                                        </P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- Modal card 1 end -->
+     
+        <!-- Modal card  2 -->
+        <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row gy-3">
+                                <div class="col-lg-6">
+                                    <div class="samll-container single-product">
+                                        <div class="row">
+                                            <div class="col-lg-11">
+                                                <img src="img/pant2.png"
+                                                    alt="" width="100%" id="ProductImg2">                 
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="modal-text">
+                                        <P><b> Name </b> :Aster School Pants Boys (Elastic) Primary<br>
+                                            <b> Price </b>: ₨ 2192 – ₨ 2387<br>
+    
+                                            <b>Availability</b>: *In stock
+    
+                                        <div class="form-group">
+                                            <label for="">Quantity:</label>
+                                            <input type="number" class="form-control" name="" id=""
+                                                aria-describedby="helpId" placeholder="">
+                                        </div>
+    
+                                        <b>Description</b>
+                                        <P>Bay View Academy Boys’ Elastic Pants in premium Navy Blue exclusively feature a button closure and two pockets. The fabric is machine-washable, ensuring a soft and comfortable feel for everyday use. They are designed to stay stylish, elegant, and cool, making them ideal for school wear or outings with friends in school.</P>
+    
+                                        <div class="review ">
+                                            <h5>Client Review</h5>
+                                            <div class="star">
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star "></i>
+                                            </div>
+                                        </div> <br>
+    
+                                        <div class="d-grid gap-2">
+                                            <a href="form.html" class="btn " type="submit" style="background-color: red;
+                                        color: white;
+                                        border-radius: 15px; "><i class="fa fa-shopping-cart" aria-hidden="true"
+                                                    style="font-size: 22px;"></i>&nbsp;&nbsp;&nbsp;Buy Now</a>
+                                        </div>
+                                        </P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- Modal card 2 end -->
+    
+        <!-- Modal card  3 -->
+        <div class="modal fade" id="modelId3" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row gy-3">
+                                <div class="col-lg-6">
+                                    <div class="samll-container single-product">
+                                        <div class="row">
+                                            <div class="col-lg-11">
+                                                <img src="img/pant3.png"
+                                                    alt="" width="100%" id="ProductImg2">                 
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="modal-text">
+                                        <P><b> Name </b> : Aster School Pants Boys (Elastic) Secondary<br>
+                                            <b> Price </b>: ₨ 1801 – ₨ 2370<br>
+    
+                                            <b>Availability</b>: *In stock
+    
+                                        <div class="form-group">
+                                            <label for="">Quantity:</label>
+                                            <input type="number" class="form-control" name="" id=""
+                                                aria-describedby="helpId" placeholder="">
+                                        </div>
+    
+                                        <b>Description</b>
+                                        <P>Bay View Academy Boys’ Elastic Pants in premium Navy Blue exclusively feature a button closure and two pockets. The fabric is machine-washable, ensuring a soft and comfortable feel for everyday use. They are designed to stay stylish, elegant, and cool, making them ideal for school wear or outings with friends in school.</P>
+    
+                                        <div class="review ">
+                                            <h5>Client Review</h5>
+                                            <div class="star">
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star "></i>
+                                            </div>
+                                        </div> <br>
+    
+                                        <div class="d-grid gap-2">
+                                            <a href="form.html" class="btn " type="submit" style="background-color: red;
+                                        color: white;
+                                        border-radius: 15px; "><i class="fa fa-shopping-cart" aria-hidden="true"
+                                                    style="font-size: 22px;"></i>&nbsp;&nbsp;&nbsp;Buy Now</a>
+                                        </div>
+                                        </P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- Modal card 3 end -->
+    
+        <!-- Modal card  4 -->
+         <div class="modal fade" id="modelId4" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row gy-3">
+                                <div class="col-lg-6">
+                                    <div class="samll-container single-product">
+                                        <div class="row">
+                                            <div class="col-lg-11">
+                                                <img src="img/pant4.png"
+                                                    alt="" width="100%" id="ProductImg2">                 
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="modal-text">
+                                        <P><b> Name </b> : Bay View Academy Pant Boys (Elastic)<br>
+                                            <b> Price </b>: ₨ 1065 – ₨ 1463<br>
+    
+                                            <b>Availability</b>: *In stock
+    
+                                        <div class="form-group">
+                                            <label for="">Quantity:</label>
+                                            <input type="number" class="form-control" name="" id=""
+                                                aria-describedby="helpId" placeholder="">
+                                        </div>
+    
+                                        <b>Description</b>
+                                        <P>Bay View Academy Boys’ Elastic Pants in premium Navy Blue exclusively feature a button closure and two pockets. The fabric is machine-washable, ensuring a soft and comfortable feel for everyday use. They are designed to stay stylish, elegant, and cool, making them ideal for school wear or outings with friends in school.</P>
+    
+                                        <div class="review ">
+                                            <h5>Client Review</h5>
+                                            <div class="star">
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star st"></i>
+                                                <i class="fa fa-star "></i>
+                                            </div>
+                                        </div> <br>
+    
+                                        <div class="d-grid gap-2">
+                                            <a href="form.html" class="btn " type="submit" style="background-color: red;
+                                        color: white;
+                                        border-radius: 15px; "><i class="fa fa-shopping-cart" aria-hidden="true"
+                                                    style="font-size: 22px;"></i>&nbsp;&nbsp;&nbsp;Buy Now</a>
+                                        </div>
+                                        </P>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- Modal card 4 end -->
+  
+ 
+  <!-- card  -->
+  <div class="container">
+    <h2 class="title pt-5"
+      style="color: red; text-align: center; font-size: 40px; font-family: 'Leckerli One', cursive;">Items sorted by
+      <span style="font-size: 40px; font-family: 'Leckerli One', cursive; color: #434343;">Position</span></h2>
+    <div class="shop-content">
+
+      <div class="food-box">
+        <div class="pic">
+          <img src="img/pant.png" class="food-img">
+        </div>
+        <h2 class="food-title">Alpha College Pant Boys (Fix Belt)</h2>
+        <div class="start" style="color: rgb(255 183 22)">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="food-price">PKR  1726</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+        <div class="add">
+            <a class="add-to-cart" data-toggle="modal" data-target="#modelId1" href="" style="text-decoration: none;color: red;">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="img/pant2.png" class="food-img"></div>
+        <h2 class="food-title">Aster School Pants Boys (Elastic) Primary</h2>
+        <div class="start" style="color: rgb(255 183 22)">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="food-price">PKR 1548</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+        <div class="add">
+            <a class="add-to-cart" data-toggle="modal" data-target="#modelId2" href="" style="text-decoration: none;color: red;">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="img/pant3.png" class="food-img"></div>
+        <h2 class="food-title">Aster School Pants Boys (Elastic) Secondary</h2>
+        <div class="start" style="color: rgb(255 183 22)">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="food-price">PKR  1594</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+        <div class="add">
+            <a class="add-to-cart" data-toggle="modal" data-target="#modelId3" href="" style="text-decoration: none;color: red;">Add To Cart</a>
+        </div>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="img/pant4.png" class="food-img"></div>
+        <h2 class="food-title">Bay View Academy Pant Boys (Elastic)</h2>
+        <div class="start" style="color: rgb(255 183 22)">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="food-price">PKR 1427</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+        <div class="add">
+            <a class="add-to-cart" data-toggle="modal" data-target="#modelId4" href="" style="text-decoration: none;color: red;">Add To Cart</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- card  -->
+
+  <script>
+    const btnCart = document.querySelector('#cart-icon');
+    const cart = document.querySelector('.cart');
+    const btnClose = document.querySelector('#cart-close');
+
+    btnCart.addEventListener('click', () => {
+      cart.classList.add('cart-active');
+    });
+
+    btnClose.addEventListener('click', () => {
+      cart.classList.remove('cart-active');
+    });
+
+    document.addEventListener('DOMContentLoaded', loadFood);
+
+    function loadFood() {
+      loadContent();
+
+    }
+
+    function loadContent() {
+      //Remove Food Items  From Cart
+      let btnRemove = document.querySelectorAll('.cart-remove');
+      btnRemove.forEach((btn) => {
+        btn.addEventListener('click', removeItem);
+      });
+
+      //Product Item Change Event
+      let qtyElements = document.querySelectorAll('.cart-quantity');
+      qtyElements.forEach((input) => {
+        input.addEventListener('change', changeQty);
+      });
+
+      //Product Cart
+
+      let cartBtns = document.querySelectorAll('.add-cart');
+      cartBtns.forEach((btn) => {
+        btn.addEventListener('click', addCart);
+      });
+
+      updateTotal();
+    }
+
+
+    //Remove Item
+    function removeItem() {
+      if (confirm('Are Your Sure to Remove')) {
+        let title = this.parentElement.querySelector('.cart-food-title').innerHTML;
+        itemList = itemList.filter(el => el.title != title);
+        this.parentElement.remove();
+        loadContent();
+      }
+    }
+
+    //Change Quantity
+    function changeQty() {
+      if (isNaN(this.value) || this.value < 1) {
+        this.value = 1;
+      }
+      loadContent();
+    }
+
+    let itemList = [];
+
+    //Add Cart
+    function addCart() {
+      let food = this.parentElement;
+      let title = food.querySelector('.food-title').innerHTML;
+      let price = food.querySelector('.food-price').innerHTML;
+      let imgSrc = food.querySelector('.food-img').src;
+      //console.log(title,price,imgSrc);
+
+      let newProduct = { title, price, imgSrc }
+
+      //Check Product already Exist in Cart
+      if (itemList.find((el) => el.title == newProduct.title)) {
+        alert("Product Already added in Cart");
+        return;
+      } else {
+        itemList.push(newProduct);
+      }
+
+
+      let newProductElement = createCartProduct(title, price, imgSrc);
+      let element = document.createElement('div');
+      element.innerHTML = newProductElement;
+      let cartBasket = document.querySelector('.cart-content');
+      cartBasket.append(element);
+      loadContent();
+    }
+
+
+    function createCartProduct(title, price, imgSrc) {
+
+      return `
+  <div class="cart-box">
+  <img src="${imgSrc}" class="cart-img">
+  <div class="detail-box">
+    <div class="cart-food-title">${title}</div>
+    <div class="price-box">
+      <div class="cart-price">${price}</div>
+       <div class="cart-amt">${price}</div>
+   </div>
+    <input type="number" value="1" class="cart-quantity">
+  </div>
+  <ion-icon name="trash" class="cart-remove"></ion-icon>
+</div>
+  `;
+    }
+
+    function updateTotal() {
+      const cartItems = document.querySelectorAll('.cart-box');
+      const totalValue = document.querySelector('.total-price');
+
+      let total = 0;
+
+      cartItems.forEach(product => {
+        let priceElement = product.querySelector('.cart-price');
+        let price = parseFloat(priceElement.innerHTML.replace("PKR", ""));
+        let qty = product.querySelector('.cart-quantity').value;
+        total += (price * qty);
+        product.querySelector('.cart-amt').innerText = "Rs." + (price * qty);
+
+      });
+
+      totalValue.innerHTML = 'Rs.' + total;
+
+
+      // Add Product Count in Cart Icon
+
+      const cartCount = document.querySelector('.cart-count');
+      let count = itemList.length;
+      cartCount.innerHTML = count;
+
+      if (count == 0) {
+        cartCount.style.display = 'none';
+      } else {
+        cartCount.style.display = 'block';
+      }
+
+
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

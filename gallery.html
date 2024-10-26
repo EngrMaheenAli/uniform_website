@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Gallery</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/logo.png">
+  </head>
+  <style>
+      .zoominbox
+{
+	background-color: #333;
+	overflow: hidden;
+}
+.zoominbox img.zoomboximg
+{
+	width: 100%;
+	/* height: 200px; */
+	transform: scale(1);
+    transition: 5s ease-in;
+	-webkit-transition: 5s ease-in;
+	animation-duration: 10s;
+	animation-delay: 3s;
+}
+.zoominbox .zoominDiv
+{
+	position: absolute;
+	right: 60px;
+	left: 60px;
+	top: 30px;
+	bottom: 60px;
+	display: block;
+	background-color: transparent;
+    
+	border:1px solid #fff;
+	padding: 30px;
+	text-align: center;
+	opacity: 0;
+	transform: scale(1.5);
+    transition: 0.5s ease-in-out;
+	-webkit-transition: 0.5s ease-in-out;
+}
+.zoominbox .zoominDiv img
+{
+	width: 50%;
+	height: auto;
+}
+.zoominbox:hover img.zoomboximg
+{
+	opacity: .3;
+	transform: scale(2);
+}
+.zoominbox:hover .zoominDiv
+{
+	opacity: 1;
+	transform: scale(1);
+}
+
+  </style>
+  <body>
+
+    <!-- whattsapp icon  -->
+    <a href="https://web.whatsapp.com/" target="_blank" class="whatsapp_float"><i
+        class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+    <!-- whattsapp icon  -->
+
+    <!-- navber start -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="" height="100px" width="100%"></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item " >
+                    <a id="home-active" class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Shop</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="tie.html">Tie</a>
+                        <a class="dropdown-item" href="Socks.html">Socks</a>
+                        <a class="dropdown-item" href="skirt.html">Skirts</a>
+                        <a class="dropdown-item" href="short.html">Shorts</a>
+                        <a class="dropdown-item" href="Pants.html">Pants</a>
+                        <a class="dropdown-item" href="hoodies.html">Hoodies</a>
+                        <a class="dropdown-item" href="T-shirts.html">T-shirts</a>
+                        <a class="dropdown-item" href="Frocks.html">Frocks</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="about.html">About </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="gallery.html">Gallery </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact </a>
+                </li>
+            </ul>
+           <form class="form-inline my-2 my-lg-0" style="font-size: 22px;">
+                <i class="fa fa-heart-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a type="button" class="login-btn" data-toggle="modal" data-target="#modelId99"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp; -->
+                <a  type="button" class="sign-btn" data-toggle="modal" data-target="#modelId100"><i class="fa fa-sign-in" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            </form>
+        </div>
+    </nav>
+    <!-- navber end  -->
+
+    <!-- carousal start  -->
+    <div id="carouselId" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="img/gallery_banner1.png" alt="First slide" class="img-fluid" >
+            </div>
+            <div class="carousel-item">
+                <img src="img/gallery_banner2.png" alt="Second slide" width="100%" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img src="img/gallery_banner3.png" alt="Third slide" width="100%">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <!-- carousal end  -->
+
+    <!-- container start  -->
+    <div class="container my-5" data-aos="slide-up" data-aos-duration="4000">
+        <h2 class="py-4" style=" text-align: center; font-size: 35px; color: #010101; font-family: 'Leckerli One', cursive;"><span
+            style=" font-size: 35px; color: red; font-family: 'Leckerli One', cursive;">SOME </span>IMAGES OF OUR BRAND 
+    </h2>
+        <div class="row gy-3">
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="zoominbox">
+                    <img src="img/some_image.png" class="zoomboximg">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+            <img src="img/some_image2.png" class="zoomboximg">
+        </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+                  <img src="img/some_image3.png" class="zoomboximg">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+                   <img src="img/some_image4.png" class="zoomboximg">
+                </div>
+            </div>
+        </div>    
+        <div class="row gy-3 mt-5">
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="zoominbox">
+                    <img src="img/some_image5.png" class="zoomboximg">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+            <img src="img/some_image6.png" class="zoomboximg">
+        </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+                  <img src="img/some_image7.png" class="zoomboximg">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                 <div class="zoominbox">
+                   <img src="img/some_image8.png" class="zoomboximg">
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- container end -->
+
+
+
+
+
+     <!-- 01 login Modal -->
+   <div class="modal fade" id="modelId99" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="text-align: center; color: black; font-family:'Leckerli One', cursive;">Registration<span
+                        style="text-align: center; color: red; font-family: 'Leckerli One', cursive;">Now</span></h1>
+                <br>
+                <form style="background-color: #434343; padding: 20px; color: white;">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Email</label>
+                        <input type="email" id="name" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pw" class="form-label">Password</label>
+                        <input type="password" id="pw" placeholder="Password" class="form-control" required>
+                    </div>
+                    <ul class="helper-text">
+                        <li class="length">Must be at least 8 characters long.</li>
+                        <li class="lowercase">Must contain a lowercase letter.</li>
+                        <li class="uppercase">Must contain an uppercase letter.</li>
+                        <li class="special">Must contain a number or special character.</li>
+                    </ul>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input id="rgstr_btn" type="submit" value="Register" onclick="store()"
+                        style="background-color: red; border: none; color: white; padding: 10px 25px;">
+                </form>
+            </div>
+
+        </div>
+    </div>
+   </div>
+   <!-- end -->
+
+   <!-- 02 sign up Modal -->
+   <div class="modal fade" id="modelId100" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="text-align: center; color: black; font-family: 'Leckerli One', cursive;">Login<span
+                        style="text-align: center; color: red; font-family: 'Leckerli One', cursive;">In</span></h1>
+                <br>
+                <form style="background-color: #434343; padding: 20px; color: white;">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Email</label>
+                        <input  type="email" id="userName" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPw" class="form-label">Password</label>
+                        <input type="password" id="userPw" placeholder="Password" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input id="login_btn" type="submit" value="Login" onclick="check()"
+                        style="background-color: red; border: none; color: white; padding: 10px 25px;">
+                </form>
+
+
+
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div> -->
+        </div>
+    </div>
+   </div>
+   <!-- end  -->
+
+
+     <!-- footer start  -->
+     <section class="footers " style=" box-shadow: 0 1px 15px 0 rgb(32 33 36 / 10%);     background-color: #ebebeb;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+                     <div class="footers-logo">
+                         <img src="img/logo.png" alt="Logo" style="width:60%;">
+                     </div>
+                     <div class="footers-info mt-3">
+                         <p>Designed by Artistic Director Nicolas Ghesquière, Louis Vuitton’s ready-to-wear for women
+                             expresses news facets of feminine fashion each season.</p>
+                     </div>
+                     <div class="social-icons"> 
+                     <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                     <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                     <a href="https://www.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                     <a href="https://www.google.com/gmail/about/"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+                 </div>
+                 </div>
+    
+                 <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+                     <h5>Category </h5>
+                     <ul class="list-unstyled">
+                        <li><a href="about.html">Shirts</a></li>
+                        <li><a href="about.html">Skirts</a></li>
+                        <li><a href="contact.html">Frocks</a></li>
+                        <li><a href="contact.html">Belts</a></li>
+                        <li><a href="about.html">Tie</a></li>                                   
+                     </ul>
+                 </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+                     <h5>Explore </h5>
+                     <ul class="list-unstyled">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="gallery.html">Gallery</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                     </ul>
+                 </div>
+               
+                 
+            </div>
+        </div>
+       </section>
+       <section class="copyright border p-0 " style="background-color: red; color: white!important; ">
+         <div class="container">
+             <div class="row text-center">
+                 <div class="col-md-12 ">
+                     <p class="" style="color: white!important;">©  2023 Copyright - MAVERICK, THE COLLECTION</p>
+                 </div>
+             </div>
+         </div>
+       </section>
+   <!-- footer end  -->
+
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="java.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+
+        }
+    })
+</script>
+<script src="cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  </body>
+</html>

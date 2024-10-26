@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>About</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/logo.png">
+  </head>
+  <style>
+            section {
+    padding: 60px 0;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-heading h2 {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.site-heading h2 span {
+  color: red;
+}
+
+.site-heading h4 {
+  display: inline-block;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: capitalize;
+  z-index: 1;
+}
+
+.site-heading h4::before {
+  background: red none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  margin-left: -25px;
+  position: absolute;
+  width: 50px;
+}
+
+.site-heading h2 span {
+  color: red;
+}
+
+.site-heading {
+  margin-bottom: 60px;
+  overflow: hidden;
+  margin-top: -5px;
+}
+
+.team-area .single-item {
+  margin-bottom: 30px;
+}
+
+.team-area .item .thumb {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.team-area .item .thumb::after {
+  background: #232323 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  width: 100%;
+}
+
+.team-area .team-items .item:hover .thumb::after {
+  opacity: 0.7;
+}
+
+.team-area .item .thumb .overlay {
+  top: -100%;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  width: 100%;
+  z-index: 1;
+}
+
+.team-area .item:hover .thumb .overlay {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.team-area .item .thumb .overlay p {
+  color: #ffffff;
+}
+
+.team-area .item .thumb .overlay h4 {
+  color: #ffffff;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.team-area .item .thumb img {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.team-area .item:hover .thumb img {
+  opacity: .6;
+}
+
+.team-area .item .thumb .social li {
+  display: inline-block;
+}
+
+.team-area .item .thumb .social li a {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 2px;
+  text-align: center;
+  width: 40px;
+}
+
+.team-area .info {
+  background: #ffffff none repeat scroll 0 0;
+  -moz-box-shadow: 0 0 10px #cccccc;
+  -webkit-box-shadow: 0 0 10px #cccccc;
+  -o-box-shadow: 0 0 10px #cccccc;
+  box-shadow: 0 0 10px #cccccc;
+  padding: 40px 20px 20px;
+  position: relative;
+  text-align: center;
+  z-index: 9;
+}
+
+.team-area .info .message {
+  height: 50px;
+  line-height: 40px;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 50px;
+}
+
+.team-area .info .message a {
+  background: #fff none repeat scroll 0 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0 0 10px #cccccc;
+  -webkit-box-shadow: 0 0 10px #cccccc;
+  -o-box-shadow: 0 0 10px #cccccc;
+  box-shadow: 0 0 10px #cccccc;
+  box-sizing: border-box;
+  color: red;
+  display: inline-block;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+}
+
+.team-area .info .message a i {
+  font-weight: 500;
+}
+
+.team-area .info h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.team-area .info span {
+  color: red;
+  font-family: "Poppins",sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.team-area .social li.twitter a {
+  background-color: red;
+}
+
+.team-area .social li.pinterest a {
+  background-color: #bd081c;
+}
+
+.team-area .social li.facebook a {
+  background-color: #3b5998;
+}
+
+.team-area .social li.google-plus a {
+  background-color: #df4a32;
+}
+
+.team-area .social li.vimeo a {
+  background-color: red;
+}
+
+.team-area .social li.instagram a {
+  background-color: #cd486b;
+}
+  </style>
+  <body>
+
+    <!-- whattsapp icon  -->
+    <a href="https://web.whatsapp.com/" target="_blank" class="whatsapp_float"><i
+        class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+    <!-- whattsapp icon  -->
+
+    <!-- navber start -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="" height="100px" width="100%"></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item " >
+                    <a id="home-active" class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Shop</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="tie.html">Tie</a>
+                        <a class="dropdown-item" href="Socks.html">Socks</a>
+                        <a class="dropdown-item" href="skirt.html">Skirts</a>
+                        <a class="dropdown-item" href="short.html">Shorts</a>
+                        <a class="dropdown-item" href="Pants.html">Pants</a>
+                        <a class="dropdown-item" href="hoodies.html">Hoodies</a>
+                        <a class="dropdown-item" href="T-shirts.html">T-shirts</a>
+                        <a class="dropdown-item" href="Frocks.html">Frocks</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="about.html">About </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="gallery.html">Gallery </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="font-size: 22px;">
+                <i class="fa fa-heart-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a type="button" class="login-btn" data-toggle="modal" data-target="#modelId99"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp; -->
+                <a  type="button" class="sign-btn" data-toggle="modal" data-target="#modelId100"><i class="fa fa-sign-in" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            </form>
+        </div>
+    </nav>
+    <!-- navber end  -->
+
+    <!-- hero section  -->
+    <div>
+      <img src="img/about_us.gif" alt="" width="100%">
+    </div>
+    <!-- hero section  end -->
+
+     <!-- text container  -->
+    <div class="container my-5">
+        <div class="text-about">
+            <h2 style=" font-size: 35px; color: #010101; font-family: 'Leckerli One', cursive;"><span
+                    style=" font-size: 35px; color: red; font-family: 'Leckerli One', cursive;">WHO </span>WE ARE
+            </h2>
+            <p style=" font-family:  sans-serif;">Our family started manufacturing ladieswear for 25 years before moving into schoolwear. In 1999, we purchased two established school uniform stores – Lyons School Shop in Enfield and Jackie’s Agencies in Kenton. Four years later we opened our flagship store in Temple Fortune and our ecommerce site was born.
+
+                In 2012, we expanded with our first warehouse and buying office in Elstree. As demand continued, further opportunity arose and we acquired three further retail stores located in Mill Hill, Northwood and Stanmore. We are now the leading London based school uniform retailer providing schoolwear for over 175 schools in London.
+                
+                Most recently, we invested in a further warehouse taking over an adjoining unit to increase our stock holding. This has improved our logistics and operational side of the business.
+                
+                We supply schools through our retail shops, comprehensive online platform and school selling events. We have built a strong reputation with schools and parents alike, and source, manufacture and retail high quality, ethically producced uniform at competitive prices.
+                
+                We employ over 50 full time local staff and throughout the Summer this increases to 150 which are spread from our Warehouse to all 5 of our stores. Our teams are local, culturally rich and diverse. Our extended summer team are University Students and School leavers.
+                
+                We have partnered with De Montfort University and offer allocating and merchandising positions to their students during their placement year.</p> <br>
+            <h2 style="font-size: 35px; color: #010101; font-family: 'Leckerli One', cursive;"><span
+                    style="font-size: 35px; color:red; font-family: 'Leckerli One', cursive;">BRINGING </span>YOUR BRAND TO LIFE.</h2>
+            <p style="font-family:  sans-serif;">Our company is synonymous with quality, designing and supplying expertly constructed using durable fabrics that are hardwearing and can withstand the rigours of every day wear.
+
+                Our ethically sourced garments give parents peace of mind and can be worn with pride by their children. Through our long-term relationships with suppliers, we are able to drive up standards and help with initiatives for sustainable clothing.
+                We want to create uniform that students are excited about and take pride in wearing.
+
+                Speaking with students is a vital part of our development process to understand their needs and we recommend hosting focus groups at school.
+                
+                The process begins with an initial consultation with our sales team to listen to you and your requirements. We will then be able to use our knowledge and experience of the industry to advise on products and our partner manufacturers which we feel will complement your uniform. This will include UK manufacturers as well as factories from around the world and we will be able to advise for which products eco uniform is available.</p> <br>
+            </div>
+    </div>
+     <!-- text container end -->
+    </div>
+    <!--container -->
+    
+    <!-- our team  -->
+    <section id="team" class="team-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-heading text-center">
+                        <h2 class="text-center " style="color: #010101; font-size: 40px; font-family: 'Leckerli One', cursive;"><span
+                            style="color: red; font-family: 'Leckerli One', cursive; ">OUR </span>Team</h2>
+                        <h4>Meet our awesome and expert team members</h4>
+                    </div>
+                </div>
+            </div>
+                <div class="row team-items">
+                    <div class="col-md-4 single-item">
+                        <div class="item">
+                            <div class="thumb">
+                                <img class="img-fluid" src="img/team_img.png" alt="Thumb" width="100%">
+                                <div class="overlay">
+                                    <h4>MAHEEN</h4>
+                                    <p>
+                                        A project manager is a professional who leads a team through the project life cycle by planning, budgeting, scheduling and tracking a project plan.
+                                    </p>
+                                    <div class="social">
+                                        <ul>
+                                            <li class="twitter">
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li class="pinterest">
+                                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                            </li>
+                                            <li class="instagram">
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li class="vimeo">
+                                                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span class="message">
+                                    <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                </span>
+                                <h4>ALI</h4>
+                                <span>Project Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-item">
+                        <div class="item">
+                            <div class="thumb">
+                                <img class="img-fluid" src="img/team_img2.png" alt="Thumb" width="100%">
+                                <div class="overlay">
+                                    <h4>JASEMA</h4>
+                                    <p>
+                                        App developers are full-stack engineers who build and maintain applications across various devices—from working on back-end data collection and app architecture to implementing user interfaces.
+                                    </p>
+                                    <div class="social">
+                                        <ul>
+                                            <li class="twitter">
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li class="pinterest">
+                                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                            </li>
+                                            <li class="instagram">
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li class="vimeo">
+                                                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span class="message">
+                                    <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                </span>
+                                <h4>SHEIKH</h4>
+                                <span>App Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-item">
+                        <div class="item">
+                            <div class="thumb">
+                                <img class="img-fluid" src="img/team_img3.png" alt="Thumb"  width="100%">
+                                <div class="overlay">
+                                    <h4>ZOYA</h4>
+                                    <p>
+                                        Web designers plan, create and code internet sites and web pages, many of which combine text with sounds, pictures, graphics and video clips. 
+                                    </p>
+                                    <div class="social">
+                                        <ul>
+                                            <li class="twitter">
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li class="pinterest">
+                                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                            </li>
+                                            <li class="instagram">
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li class="vimeo">
+                                                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span class="message">
+                                    <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                </span>
+                                <h4>MINHAS</h4>
+                                <span>Web designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <!-- our team  -->
+ <!-- 01 login Modal -->
+ <div class="modal fade" id="modelId99" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="text-align: center; color: black; font-family:'Leckerli One', cursive;">Registration<span
+                        style="text-align: center; color: red; font-family: 'Leckerli One', cursive;">Now</span></h1>
+                <br>
+                <form style="background-color: #434343; padding: 20px; color: white;">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Email</label>
+                        <input type="email" id="name" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pw" class="form-label">Password</label>
+                        <input type="password" id="pw" placeholder="Password" class="form-control" required>
+                    </div>
+                    <ul class="helper-text">
+                        <li class="length">Must be at least 8 characters long.</li>
+                        <li class="lowercase">Must contain a lowercase letter.</li>
+                        <li class="uppercase">Must contain an uppercase letter.</li>
+                        <li class="special">Must contain a number or special character.</li>
+                    </ul>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input id="rgstr_btn" type="submit" value="Register" onclick="store()"
+                        style="background-color: red; border: none; color: white; padding: 10px 25px;">
+                </form>
+            </div>
+
+        </div>
+    </div>
+   </div>
+   <!-- end -->
+
+   <!-- 02 sign up Modal -->
+   <div class="modal fade" id="modelId100" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="text-align: center; color: black; font-family: 'Leckerli One', cursive;">Login<span
+                        style="text-align: center; color: red; font-family: 'Leckerli One', cursive;">In</span></h1>
+                <br>
+                <form style="background-color: #434343; padding: 20px; color: white;">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Email</label>
+                        <input  type="email" id="userName" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPw" class="form-label">Password</label>
+                        <input type="password" id="userPw" placeholder="Password" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input id="login_btn" type="submit" value="Login" onclick="check()"
+                        style="background-color: red; border: none; color: white; padding: 10px 25px;">
+                </form>
+
+
+
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div> -->
+        </div>
+    </div>
+   </div>
+   <!-- end  -->
+
+     <!-- footer start  -->
+   <section class="footers " style=" box-shadow: 0 1px 15px 0 rgb(32 33 36 / 10%);     background-color: #ebebeb;">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+                 <div class="footers-logo">
+                     <img src="img/logo.png" alt="Logo" style="width:60%;">
+                 </div>
+                 <div class="footers-info mt-3">
+                     <p>Designed by Artistic Director Nicolas Ghesquière, Louis Vuitton’s ready-to-wear for women
+                         expresses news facets of feminine fashion each season.</p>
+                 </div>
+                 <div class="social-icons"> 
+                 <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                 <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                 <a href="https://www.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                 <a href="https://www.google.com/gmail/about/"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+             </div>
+             </div>
+
+             <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+                 <h5>Category </h5>
+                 <ul class="list-unstyled">
+                    <li><a href="about.html">Shirts</a></li>
+                    <li><a href="about.html">Skirts</a></li>
+                    <li><a href="contact.html">Frocks</a></li>
+                    <li><a href="contact.html">Belts</a></li>
+                    <li><a href="about.html">Tie</a></li>                                   
+                 </ul>
+             </div>
+            <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+                 <h5>Explore </h5>
+                 <ul class="list-unstyled">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                 </ul>
+             </div>
+           
+             
+        </div>
+    </div>
+   </section>
+   <section class="copyright border p-0 " style="background-color: red; color: white!important; ">
+     <div class="container">
+         <div class="row text-center">
+             <div class="col-md-12 ">
+                <p class="" style="color: white!important;">©  2023 Copyright - MAVERICK, THE COLLECTION</p>
+             </div>
+         </div>
+     </div>
+   </section>
+   <!-- footer end  -->
+
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="java.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+
+        }
+    })
+</script>
+<script src="cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  </body>
+</html>
