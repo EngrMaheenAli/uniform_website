@@ -128,10 +128,10 @@ body {
  
 }
 #home-active{
-  color: red;
+  color: #738f3a;
 }
 #active{
-  color: red!important;
+  color: #738f3a!important;
 }
 .navbar-nav{
   padding-right: 20%;
@@ -145,20 +145,20 @@ body {
   font-weight: 600;
 }
 .nav-item a:hover{
-  color: red!important;
+  color: #738f3a!important;
   margin-right: 20px;
   font-weight: 600;
   transition: .6s ease;  
 }
 .form-inline i:hover{
-  color: red!important;
+  color: #738f3a!important;
 
   transition: .6s ease;  
 
 }
 .dropdown-menu a:hover{
   color: white!important;
-  background:  red!important;
+  background:  #738f3a!important;
 
 }
 /* navbar end   */
@@ -179,7 +179,7 @@ section{
   justify-content: flex-start;
 }
 .home-text h1{
-  font-family: 'Leckerli One', cursive;
+  font-family: cursive;
   /* font-size: var(--big-font); */
   font-size: 4rem;
   color: white;
@@ -194,7 +194,7 @@ section{
 }
 .home-btn  .btn{
   padding: 20px 35px;
-  background: red;
+  background: #738f3a;
   color: white;
   font-size: 14px;
   font-weight: 500;
@@ -224,7 +224,7 @@ section{
 /* home-about start  */
   .home-about a{
     padding: 20px 35px;
-    background: red;
+    background: #738f3a;
     color: white;
     font-size: 14px;
     font-weight: 500;
@@ -312,7 +312,7 @@ section{
 }
 .product-grid .social li a:hover{
   color:#fff;
-  background-color:red;
+  background-color:#738f3a;
 }
 .product-grid .social li a:after,
 .product-grid .social li a:before{
@@ -346,7 +346,7 @@ section{
 .product-grid .product-discount-label,
 .product-grid .product-new-label{
   color:#fff;
-  background-color:red;
+  background-color:#738f3a;
   font-size:12px;
   text-transform:uppercase;
   padding:2px 7px;
@@ -401,7 +401,7 @@ section{
 }
 .product-grid .title a:hover,
 .product-grid:hover .title a{
-  color:red
+  color:#738f3a
 }
 .product-grid .price{
   color:#333;
@@ -560,7 +560,7 @@ form .btn button{
     border-radius: 30px;
     padding: 0.8rem;
     font-family: inherit;
-    background-color: red;
+    background-color: #738f3a;
     color: white;
     text-decoration: none;
     outline: none;
@@ -683,7 +683,7 @@ form .btn{
 }
 
 .counters {
-	background: red;
+	background: #738f3a;
 	color: #fff;
 	padding: 40px 20px;
 	
@@ -722,7 +722,7 @@ form .btn{
   color:#696969;
 }
 .footers a:hover{
-  color: red;
+  color: #738f3a;
 }
 .footers p {
 color:#696969;
